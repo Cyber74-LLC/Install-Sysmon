@@ -14,7 +14,7 @@ Install-Sysmon -path C:\Users\example\Desktop
 
 #Establish parameters for path
 param (
-    [string]$path=[Environment]::GetFolderPath("Desktop")   
+    $path = "C:\Temp"
 )
 
 #Test path and create it if required
@@ -46,12 +46,13 @@ Write-Host "Unzip Complete."
 
 Write-Host "Retrieving Configuration File..."
 
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml -Outfile sysmonconfig-export.xml
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml -Outfile sysmonconfig-export.xml
 
 Write-Host "Configuration File Retrieved."
 
 Write-Host "Installing Sysmon..."
 
 .\sysmon64.exe -accepteula -i sysmonconfig-export.xml
+.\sysmon64.exe -accepteula -c sysmonconfig-export.xml
 
 Write-Host "Sysmon Installed!"
