@@ -46,7 +46,7 @@ Write-Host "Unzip Complete."
 
 Write-Host "Retrieving Configuration File..."
 
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml -Outfile sysmonconfig-export.xml
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/Cyber74-Brian-McCaleb/sysmon-modular/master/c74prod.xml -Outfile sysmonconfig-export.xml
 
 Write-Host "Configuration File Retrieved."
 
