@@ -38,7 +38,7 @@ Write-Host "Sysmon Retrived"
 
 Write-Host "Unzip Sysmon..."
 
-Expand-Archive Sysmon.zip
+Expand-Archive Sysmon.zip -Force
 
 Set-Location $path\Sysmon
 
